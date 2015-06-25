@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME': 'nway_ac',
         'USER': 'postgres',
-        'PASSWORD': 'nway2013',
+        'PASSWORD': 'nway_2015And',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

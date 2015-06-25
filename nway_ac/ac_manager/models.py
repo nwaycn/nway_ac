@@ -64,6 +64,8 @@ class CallRings(models.Model):
     class Meta:
         managed = False
         db_table = 'call_rings'
+    def __unicode__(self):
+        return self.ring_name
 
 
 class CalloutNumbers(models.Model):

@@ -39,7 +39,7 @@ CREATE TABLE auth_group (
 );
 
 
-ALTER TABLE auth_group OWNER TO postgres;
+ALTER TABLE public.auth_group OWNER TO postgres;
 
 --
 -- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -53,7 +53,7 @@ CREATE SEQUENCE auth_group_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_group_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_group_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -73,7 +73,7 @@ CREATE TABLE auth_group_permissions (
 );
 
 
-ALTER TABLE auth_group_permissions OWNER TO postgres;
+ALTER TABLE public.auth_group_permissions OWNER TO postgres;
 
 --
 -- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -87,7 +87,7 @@ CREATE SEQUENCE auth_group_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_group_permissions_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -108,7 +108,7 @@ CREATE TABLE auth_permission (
 );
 
 
-ALTER TABLE auth_permission OWNER TO postgres;
+ALTER TABLE public.auth_permission OWNER TO postgres;
 
 --
 -- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -122,7 +122,7 @@ CREATE SEQUENCE auth_permission_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_permission_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_permission_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -150,7 +150,7 @@ CREATE TABLE auth_user (
 );
 
 
-ALTER TABLE auth_user OWNER TO postgres;
+ALTER TABLE public.auth_user OWNER TO postgres;
 
 --
 -- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -163,7 +163,7 @@ CREATE TABLE auth_user_groups (
 );
 
 
-ALTER TABLE auth_user_groups OWNER TO postgres;
+ALTER TABLE public.auth_user_groups OWNER TO postgres;
 
 --
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -177,7 +177,7 @@ CREATE SEQUENCE auth_user_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_user_groups_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -198,7 +198,7 @@ CREATE SEQUENCE auth_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_user_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -218,7 +218,7 @@ CREATE TABLE auth_user_user_permissions (
 );
 
 
-ALTER TABLE auth_user_user_permissions OWNER TO postgres;
+ALTER TABLE public.auth_user_user_permissions OWNER TO postgres;
 
 --
 -- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -232,7 +232,7 @@ CREATE SEQUENCE auth_user_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE auth_user_user_permissions_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO postgres;
 
 --
 -- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -251,7 +251,7 @@ CREATE TABLE base_config (
 );
 
 
-ALTER TABLE base_config OWNER TO postgres;
+ALTER TABLE public.base_config OWNER TO postgres;
 
 --
 -- Name: call_rings; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -266,7 +266,7 @@ CREATE TABLE call_rings (
 );
 
 
-ALTER TABLE call_rings OWNER TO postgres;
+ALTER TABLE public.call_rings OWNER TO postgres;
 
 --
 -- Name: call_rings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -280,7 +280,7 @@ CREATE SEQUENCE call_rings_id_seq
     CACHE 1;
 
 
-ALTER TABLE call_rings_id_seq OWNER TO postgres;
+ALTER TABLE public.call_rings_id_seq OWNER TO postgres;
 
 --
 -- Name: call_rings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -304,7 +304,7 @@ CREATE TABLE callout_numbers (
 );
 
 
-ALTER TABLE callout_numbers OWNER TO postgres;
+ALTER TABLE public.callout_numbers OWNER TO postgres;
 
 --
 -- Name: COLUMN callout_numbers.last_call_time; Type: COMMENT; Schema: public; Owner: postgres
@@ -325,7 +325,7 @@ CREATE SEQUENCE callout_numbers_id_seq
     CACHE 1;
 
 
-ALTER TABLE callout_numbers_id_seq OWNER TO postgres;
+ALTER TABLE public.callout_numbers_id_seq OWNER TO postgres;
 
 --
 -- Name: callout_numbers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -351,7 +351,7 @@ CREATE TABLE django_admin_log (
 );
 
 
-ALTER TABLE django_admin_log OWNER TO postgres;
+ALTER TABLE public.django_admin_log OWNER TO postgres;
 
 --
 -- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -365,7 +365,7 @@ CREATE SEQUENCE django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE django_admin_log_id_seq OWNER TO postgres;
+ALTER TABLE public.django_admin_log_id_seq OWNER TO postgres;
 
 --
 -- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -385,7 +385,7 @@ CREATE TABLE django_content_type (
 );
 
 
-ALTER TABLE django_content_type OWNER TO postgres;
+ALTER TABLE public.django_content_type OWNER TO postgres;
 
 --
 -- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -399,7 +399,7 @@ CREATE SEQUENCE django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE django_content_type_id_seq OWNER TO postgres;
+ALTER TABLE public.django_content_type_id_seq OWNER TO postgres;
 
 --
 -- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -420,7 +420,7 @@ CREATE TABLE django_migrations (
 );
 
 
-ALTER TABLE django_migrations OWNER TO postgres;
+ALTER TABLE public.django_migrations OWNER TO postgres;
 
 --
 -- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -434,7 +434,7 @@ CREATE SEQUENCE django_migrations_id_seq
     CACHE 1;
 
 
-ALTER TABLE django_migrations_id_seq OWNER TO postgres;
+ALTER TABLE public.django_migrations_id_seq OWNER TO postgres;
 
 --
 -- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -454,7 +454,7 @@ CREATE TABLE django_session (
 );
 
 
-ALTER TABLE django_session OWNER TO postgres;
+ALTER TABLE public.django_session OWNER TO postgres;
 
 --
 -- Name: nway_call_tasks; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
@@ -468,7 +468,7 @@ CREATE TABLE nway_call_tasks (
 );
 
 
-ALTER TABLE nway_call_tasks OWNER TO postgres;
+ALTER TABLE public.nway_call_tasks OWNER TO postgres;
 
 --
 -- Name: nway_call_tasks_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -482,7 +482,7 @@ CREATE SEQUENCE nway_call_tasks_id_seq
     CACHE 1;
 
 
-ALTER TABLE nway_call_tasks_id_seq OWNER TO postgres;
+ALTER TABLE public.nway_call_tasks_id_seq OWNER TO postgres;
 
 --
 -- Name: nway_call_tasks_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -502,7 +502,7 @@ CREATE TABLE time_plan (
 );
 
 
-ALTER TABLE time_plan OWNER TO postgres;
+ALTER TABLE public.time_plan OWNER TO postgres;
 
 --
 -- Name: time_plan_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -516,7 +516,7 @@ CREATE SEQUENCE time_plan_id_seq
     CACHE 1;
 
 
-ALTER TABLE time_plan_id_seq OWNER TO postgres;
+ALTER TABLE public.time_plan_id_seq OWNER TO postgres;
 
 --
 -- Name: time_plan_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
@@ -692,7 +692,7 @@ SELECT pg_catalog.setval('auth_permission_id_seq', 33, true);
 -- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO auth_user VALUES (1, 'pbkdf2_sha256$20000$UBPItMKEokzh$MH+TyiXr6XCP9F8GCThrG+o0jXwUo1VPzhvRM++jOiw=', '2015-06-21 18:31:47.59+08', true, 'admin', '', '', 'lihao_nx@163.com', true, true, '2015-06-21 18:30:42.517+08');
+INSERT INTO auth_user VALUES (1, 'pbkdf2_sha256$20000$UBPItMKEokzh$MH+TyiXr6XCP9F8GCThrG+o0jXwUo1VPzhvRM++jOiw=', '2015-06-23 14:56:53.275563+08', true, 'admin', '', '', 'lihao_nx@163.com', true, true, '2015-06-21 18:30:42.517+08');
 
 
 --
@@ -732,6 +732,9 @@ SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
 -- Data for Name: base_config; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO base_config VALUES ('max_call', '200');
+INSERT INTO base_config VALUES ('gateway_url', 'sofia/gateway/tojp/');
+INSERT INTO base_config VALUES ('base_path', '/usr/local/src/nway_ac/nway_ac/');
 
 
 --
@@ -739,26 +742,30 @@ SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
 --
 
 INSERT INTO call_rings VALUES (3, 'test', 'uploads/rings/20150621195412_73.wav', NULL, NULL);
+INSERT INTO call_rings VALUES (4, 'bgmusic_new', 'uploads/rings/20150623155330_2.wav', NULL, NULL);
+INSERT INTO call_rings VALUES (5, 'bgmusic_old', 'uploads/rings/20150623155351_94.wav', NULL, NULL);
 
 
 --
 -- Name: call_rings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('call_rings_id_seq', 3, true);
+SELECT pg_catalog.setval('call_rings_id_seq', 5, true);
 
 
 --
 -- Data for Name: callout_numbers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO callout_numbers VALUES (1, '018621575908', 200, 4, 1, true, '2015-06-23 18:16:45.529433');
+INSERT INTO callout_numbers VALUES (2, '018939892185', 100, 5, 1, true, '2015-06-23 18:15:51.262677');
 
 
 --
 -- Name: callout_numbers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('callout_numbers_id_seq', 1, false);
+SELECT pg_catalog.setval('callout_numbers_id_seq', 2, true);
 
 
 --
@@ -766,13 +773,25 @@ SELECT pg_catalog.setval('callout_numbers_id_seq', 1, false);
 --
 
 INSERT INTO django_admin_log VALUES (1, '2015-06-21 19:54:12.767+08', '3', 'CallRings object', 1, '', 8, 1);
+INSERT INTO django_admin_log VALUES (2, '2015-06-23 14:22:43.195263+08', 'max_call', 'BaseConfig object', 1, '', 7, 1);
+INSERT INTO django_admin_log VALUES (3, '2015-06-23 14:23:41.088895+08', 'base_path', 'BaseConfig object', 1, '', 7, 1);
+INSERT INTO django_admin_log VALUES (4, '2015-06-23 14:25:12.034578+08', 'gateway_url', 'BaseConfig object', 1, '', 7, 1);
+INSERT INTO django_admin_log VALUES (5, '2015-06-23 14:57:03.581929+08', '1', 'TimePlan object', 1, '', 11, 1);
+INSERT INTO django_admin_log VALUES (6, '2015-06-23 15:50:38.214991+08', '2', 'TimePlan object', 1, '', 11, 1);
+INSERT INTO django_admin_log VALUES (7, '2015-06-23 15:53:30.073839+08', '4', 'CallRings object', 1, '', 8, 1);
+INSERT INTO django_admin_log VALUES (8, '2015-06-23 15:53:51.954975+08', '5', 'CallRings object', 1, '', 8, 1);
+INSERT INTO django_admin_log VALUES (9, '2015-06-23 16:00:13.799411+08', '1', 'NwayCallTasks object', 1, '', 10, 1);
+INSERT INTO django_admin_log VALUES (10, '2015-06-23 16:21:57.164188+08', '1', 'CalloutNumbers object', 1, '', 9, 1);
+INSERT INTO django_admin_log VALUES (11, '2015-06-23 16:58:58.183662+08', 'gateway_url', 'BaseConfig object', 2, '没有字段被修改。', 7, 1);
+INSERT INTO django_admin_log VALUES (12, '2015-06-23 17:14:54.638843+08', 'base_path', 'BaseConfig object', 2, '没有字段被修改。', 7, 1);
+INSERT INTO django_admin_log VALUES (13, '2015-06-23 18:12:10.726588+08', '2', 'CalloutNumbers object', 1, '', 9, 1);
 
 
 --
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 1, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 13, true);
 
 
 --
@@ -827,32 +846,37 @@ SELECT pg_catalog.setval('django_migrations_id_seq', 10, true);
 --
 
 INSERT INTO django_session VALUES ('ueqapubui5gjtk3iy11n4m643nmfz0ts', 'MDQxZjBmNWFiMDAwOGYzYzM2MDdmNWE1MzVmMjFiOTBlNTgzNjM1NDp7Il9hdXRoX3VzZXJfaGFzaCI6IjAyMGE2ZGM2Mzg1MGEzZDg3Y2JlYmU1YWRkZWU4Yjg5MWQ1NzBkNzIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2015-07-05 18:31:47.592+08');
+INSERT INTO django_session VALUES ('eh7jgnqezh741mmnc2c2ctgv4zktdrun', 'MDQxZjBmNWFiMDAwOGYzYzM2MDdmNWE1MzVmMjFiOTBlNTgzNjM1NDp7Il9hdXRoX3VzZXJfaGFzaCI6IjAyMGE2ZGM2Mzg1MGEzZDg3Y2JlYmU1YWRkZWU4Yjg5MWQ1NzBkNzIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2015-07-07 14:15:38.234729+08');
+INSERT INTO django_session VALUES ('xy25vvgp58b7l4bagrjtrbic95xtlgqh', 'MDQxZjBmNWFiMDAwOGYzYzM2MDdmNWE1MzVmMjFiOTBlNTgzNjM1NDp7Il9hdXRoX3VzZXJfaGFzaCI6IjAyMGE2ZGM2Mzg1MGEzZDg3Y2JlYmU1YWRkZWU4Yjg5MWQ1NzBkNzIiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=', '2015-07-07 14:56:53.278349+08');
 
 
 --
 -- Data for Name: nway_call_tasks; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO nway_call_tasks VALUES (1, 'lihaotest', '2015-06-23 07:59:00', '2015-06-28 07:59:00');
 
 
 --
 -- Name: nway_call_tasks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('nway_call_tasks_id_seq', 1, false);
+SELECT pg_catalog.setval('nway_call_tasks_id_seq', 1, true);
 
 
 --
 -- Data for Name: time_plan; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
+INSERT INTO time_plan VALUES (1, '07:50:00', '11:30:00');
+INSERT INTO time_plan VALUES (2, '13:00:00', '19:00:00');
 
 
 --
 -- Name: time_plan_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('time_plan_id_seq', 1, false);
+SELECT pg_catalog.setval('time_plan_id_seq', 2, true);
 
 
 --

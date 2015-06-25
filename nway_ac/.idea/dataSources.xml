@@ -6,7 +6,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/nway_ac</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfc4dfdddfcbdfd3df98df9adf9bdf99</user-password>
+      <user-password>dfc4dfdddfcbdfd3dff5df98df9adf9bdf9fdfebdfc4dfce</user-password>
       <libraries />
     </data-source>
   </component>
