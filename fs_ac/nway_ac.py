@@ -30,7 +30,7 @@ gateway_url = 'sofia/gateway/tojp/'
 
 #//global var
 def GetDbConn():
-    conn = psycopg2.connect(database="nway_ac", user="postgres", password="nway_2015And", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="nway_ac", user="postgres", password="nway_2398488485And", host="127.0.0.1", port="5432")
     return conn
 
 def GetCurrentPath():
@@ -111,6 +111,10 @@ def GetRingPath():
     index = random.randint(0,ring_count -1)
     print 'ring count:' + str(ring_count) + ',this index:'+ str(index)
     return rings[index]
+def GetRandomTimeout():
+    timeout =500
+    timeout = random.randint(200,1000)
+    return timeout
 
 def AutoCall(a,b):
 
@@ -122,8 +126,8 @@ def AutoCall(a,b):
                 querysql = 'SELECT a.id, a.call_numbers,a. call_timeout, a.call_ring_id, a.callout_state, \
                             a.is_enable, a.last_call_time\
                             FROM callout_numbers a  where a.is_enable=True and' \
-                           ' a.callout_state =0;  '
-                #OR  ceil(abs(extract(epoch from current_timestamp -a. last_call_time))) > a.call_timeout)
+                           ' a.callout_state =0  \
+                OR  (ceil(abs(extract(epoch from current_timestamp -a.last_call_time))) > a.call_timeout)'
                 #print querysql
                 cur = conn.cursor()
                 cur.execute(querysql)
@@ -134,11 +138,13 @@ def AutoCall(a,b):
                     call_timeout = row[2]
                     call_ring_id = row[3]
                     ring_path = base_path + GetRingPath()
-                    dial_string = 'originate {execute_on_answer=\'sched_hangup +' + str(call_timeout) + '\'}'+gateway_url + \
+                    dial_string = 'originate {execute_on_answer=\'sched_hangup +' + str(GetRandomTimeout()) + '\'}'+gateway_url + \
                                   call_number + ' &endless_playback(\'' + ring_path + '\')'
                     CallOut(dial_string, call_number)
                     print dial_string
-                    time.sleep(0.070)
+
+                    time.sleep(0.060)
+                    SetNumberBusy(call_number)
             conn.close()
         except:
             print 'access database failed\n'
