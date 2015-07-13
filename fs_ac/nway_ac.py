@@ -203,6 +203,8 @@ if __name__ == '__main__':
             if ee:
                 my_number =  ee.getHeader('Caller-Caller-ID-Number')
                 dest_number = ee.getHeader('Caller-Destination-Number')
+                if dest_number is None:
+                    continue
                 SetNumberIdle(dest_number)
                 #在此处处理挂机事件
     con.disconnect();
