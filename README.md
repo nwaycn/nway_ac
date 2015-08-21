@@ -1,3 +1,5 @@
+有不少朋友问，我们如何实现cdr呢,那么可以编译时加pg-core条件，且配置cdr_pg让cdr直接记录到postgresql数据库中。
+
 # nway_ac
 提醒：如果呼的量比较大的话，可以先关掉log或者把log中的debug，info等去掉。没必要的话，把cdr_csv模块也干掉，不然呼的太快，磁盘受不了。
 
