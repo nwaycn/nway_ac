@@ -196,14 +196,18 @@ if __name__ == '__main__':
     if con.connected():
         thread.start_new_thread(AutoCall,(1,1))
         e = con.events('plain','CHANNEL_HANGUP_COMPLETE CUSTOM:da')
+        #CUSTOM:da为自定义的电话铃音检测模块消息
         while True:
             ee = con.recvEvent()
             #print ee
             event_name = ee.getHeader( 'Event-Name')
             event_subclass = ee.getHeader('Event-Subclass')
             if ee and event_name == 'CUSTOM' and event_subclass == 'da':
+                #检测到了电话铃音分析结果
                 da_type = ee.getHeader('da_type')
+                #分析结果，由da_type来送出，即空号，忙等
                 da_similarity = ee.getHeader('da_similarity')
+                #da_similarity是和样本库中检测的实际样本的相似性百分比
                 print da_type, da_similarity
             if ee and event_name == 'HANGUP_COMPLETE':
                 my_number =  ee.getHeader('Caller-Caller-ID-Number')
