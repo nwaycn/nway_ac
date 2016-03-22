@@ -30,7 +30,7 @@ gateway_url = 'sofia/gateway/tojp/'
 
 #//global var
 def GetDbConn():
-    conn = psycopg2.connect(database="nway_ac", user="postgres", password="nway_2398488485And", host="127.0.0.1", port="5432")
+    conn = psycopg2.connect(database="nway_ac", user="postgres", password="nway_2015And", host="127.0.0.1", port="5432")
     return conn
 
 def GetCurrentPath():
@@ -113,7 +113,7 @@ def GetRingPath():
     return rings[index]
 def GetRandomTimeout():
     timeout =500
-    timeout = random.randint(200,1000)
+    timeout = random.randint(300,5000)
     return timeout
 
 def AutoCall(a,b):
@@ -126,8 +126,8 @@ def AutoCall(a,b):
                 querysql = 'SELECT a.id, a.call_numbers,a. call_timeout, a.call_ring_id, a.callout_state, \
                             a.is_enable, a.last_call_time\
                             FROM callout_numbers a  where a.is_enable=True and' \
-                           ' a.callout_state =0  \
-                OR  (ceil(abs(extract(epoch from current_timestamp -a.last_call_time))) > a.call_timeout)'
+                           ' a.callout_state =0;  '
+                #OR  ceil(abs(extract(epoch from current_timestamp -a. last_call_time))) > a.call_timeout)
                 #print querysql
                 cur = conn.cursor()
                 cur.execute(querysql)
@@ -138,13 +138,12 @@ def AutoCall(a,b):
                     call_timeout = row[2]
                     call_ring_id = row[3]
                     ring_path = base_path + GetRingPath()
-                    dial_string = 'originate {execute_on_answer=\'sched_hangup +' + str(GetRandomTimeout()) + '\'}'+gateway_url + \
+                    dial_string = 'originate {execute_on_pre_answer=start_da,execute_on_answer=stop_da,execute_on_answer=\'sched_hangup +' + str(GetRandomTimeout()) + '\'}'+gateway_url + \
                                   call_number + ' &endless_playback(\'' + ring_path + '\')'
                     CallOut(dial_string, call_number)
                     print dial_string
-
-                    time.sleep(0.060)
-                    SetNumberBusy(call_number)
+                    time.sleep(0.070)
+                cur.close()
             conn.close()
         except:
             print 'access database failed\n'
@@ -196,15 +195,19 @@ if __name__ == '__main__':
     con = ESLconnection(fs_ip, fs_esl_port, fs_esl_auth)
     if con.connected():
         thread.start_new_thread(AutoCall,(1,1))
-        e = con.events('plain','CHANNEL_HANGUP_COMPLETE')
+        e = con.events('plain','CHANNEL_HANGUP_COMPLETE CUSTOM:da')
         while True:
             ee = con.recvEvent()
             #print ee
-            if ee:
+            event_name = ee.getHeader( 'Event-Name')
+            event_subclass = ee.getHeader('Event-Subclass')
+            if ee and event_name == 'CUSTOM' and event_subclass == 'da':
+                da_type = ee.getHeader('da_type')
+                da_similarity = ee.getHeader('da_similarity')
+                print da_type, da_similarity
+            if ee and event_name == 'HANGUP_COMPLETE':
                 my_number =  ee.getHeader('Caller-Caller-ID-Number')
                 dest_number = ee.getHeader('Caller-Destination-Number')
-                if dest_number is None:
-                    continue
                 SetNumberIdle(dest_number)
                 #在此处处理挂机事件
     con.disconnect();
